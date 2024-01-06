@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"> </script>
+    <script src="scriptHome.js" /></script>
+    <title> File Upload </title>
+  </head>
+  <body>
+    <nav>
+      <a class="nav_link" href="/home.html">Home</a>
+          <ul class="nav_list">
+              <li class="nav_list_item">
+                  <a class="nav_link" href="/upload.html"> Upload file </a>
+              </li>
+              <li class="nav_list_item">
+                  <a class="nav_link" href="/updateElements.html">Add/Remove elements</a>
+              </li>
+          </ul>
+    </nav>
+
+    <h1> Welcome to the Display Molecule Page!</h1>
+
+    <div id="home_description" class="home_div">
+      <p>Upload a .sdf file and add some elements to get started! Once thats done, your molecule will appear below.</p>
+      <p>If there are no molecules below, that means there are none in the database. Try <a href="/upload.html">uploading</a> one.</p>
+      <p>If there are black circles on your molecule, that means there is no info on that element in the database. <a href="/updateElements.html">Add it.</a></p>
+    </div>
+
+    <div id="outer_form_home" class="home_div">
+      <form action="/display_molecule" method="post" class="forms">
+        <legend>Select one molecule to display:</legend><br>
+          <div id="radial_buttons" class="home_div">
+          </div>
+          <p>
+            <input type="submit" id="home_form_button" class="form_button big_text" value="Load molecule"/>
+          </p>
+      </form>
+    </div>
+
+    <footer>
+      <div>
+          <span class="span_footer">Created March 2023. Molecule Display website.
+              <a href="https://github.com/Justin-Ja/" class="footerLink">
+              More Info</a>
+          </span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"> </script>
+    <script src="scriptUpdateElements.js" /></script>
+    <title> File Upload </title>
+  </head>
+  <body>
+      <nav>
+      <a class="nav_link" href="/home.html">Home</a>
+          <ul class="nav_list">
+              <li class="nav_list_item">
+                  <a class="nav_link" href="/upload.html"> Upload file </a>
+              </li>
+              <li class="nav_list_item">
+                  <a class="nav_link" href="/updateElements.html">Add/Remove elements</a>
+              </li>
+          </ul>
+    </nav>
+    <h1>Add/Remove an element!</h1>
+
+    <div id="div_info_elements" class="elements_div">
+      <p id="info_elements">
+        Use the form below to add a new element to display when showing a molecule. <br>
+        To remove an element, all you will need to input is the element's name
+      </p>
+    </div>
+    <div id="outer_elements_form" class="elements_div">
+      <form action="/updateElements_handler" enctype="multipart/form-data" method="post" id="element_form" class="forms">
+        <section class="form_section">
+          <input type="radio" name="AR-Group" value="Add" id="add_radio" checked >
+          <label for="add_radio" textContent="Add an element">Add an element</label>
+          <input type="radio" name="AR-Group" value="Remove" id="remove">
+          <label for="remove" textContent="Remove an element">Remove an element</label>
+        </section>
+        <br>
+        <section class="form_section">
+          Element code (Max 3 characters):
+          <input type="text" id="element_code" class="add" name="code" placeholder="H" pattern="[A-z]{1,3}" size="3" required/>
+        </section>
+        <br>
+        <section class="form_section">
+          Element numer:
+          <input type="number" id="element_number" class="add" name="number" min="1" max="118" placeholder="1" size="5" required/>
+        </section>
+        <br>
+        <section class="form_section">
+          Element name (Max 32 characters):
+          <input type="text" id="element_name" class="addRemove" name="name" placeholder="Hydrogen" pattern="[A-z]{1,32}" required/>
+        </section>
+        <br>
+        <section class="form_section">
+          Colour 1:
+          <input type="color" id="element_colour1" class="add" name="colour1" required/>
+        </section>
+        <br>
+        <section class="form_section">
+          Colour 2:
+          <input type="color" id="element_colour2" class="add" name="colour2"  required/>
+        </section>
+        <br>
+        <section class="form_section">
+          Colour 3:
+          <input type="color" id="element_colour3" class="add" name="colour3" required/>
+        </section>
+        <br>
+        <section class="form_section">
+          Radius:
+          <input type="number" id="element_radius" class="add" name="radius" min="10" max="200" placeholder="20" required/>
+        </section>
+        <br>
+
+        <section class="form_section">
+          <input type="submit" value="Update" id="update_submit" class="form_button normal_text"/>
+        </section>
+      </form>
+    </div>
+
+    <footer>
+      <div>
+          <span class="span_footer">Created March 2023. Molecule Display website.
+              <a href="https://github.com/Justin-Ja/" class="footerLink">
+              More Info</a>
+          </span>
+      </div>
+    </footer>
+  </body>
+</html>

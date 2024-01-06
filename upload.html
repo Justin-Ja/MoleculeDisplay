@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"> </script>
+    <script src="scriptUpload.js" /></script>
+    <title> File Upload </title>
+  </head>
+  <body>
+    <nav>
+      <a class="nav_link" href="/home.html">Home</a>
+          <ul class="nav_list">
+              <li class="nav_list_item">
+                  <a class="nav_link" href="/upload.html"> Upload file </a>
+              </li>
+              <li class="nav_list_item">
+                  <a class="nav_link" href="/updateElements.html">Add/Remove elements</a>
+              </li>
+          </ul>
+    </nav>
+    <h1> File Upload </h1>
+    <form action="/upload_hanlder.html" enctype="multipart/form-data" method="post" class="forms">
+      <section class="form_section">
+        Upload a .sdf file <br>
+        <input type="file" id="sdf_file" name="filename" required/>
+      </section>
+      <section class="form_section">
+        Enter a name for the molecule: <br>
+        <input type="text" id="sdf_name" name="moleculeName" placeholder="name" required/>
+      </section>
+      <section class="form_section">
+        <input type="submit" id="upload_button" value="Upload" class="form_button normal_text"/>
+      </section>
+    </form>
+
+    <footer>
+      <div>
+          <span class="span_footer">Created March 2023. Molecule Display website.
+              <a href="https://github.com/Justin-Ja/" class="footerLink">
+              More Info</a>
+          </span>
+      </div>
+    </footer>
+  </body>
+</html>

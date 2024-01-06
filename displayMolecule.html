@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"> </script>
+    <script src="scriptDisplay.js" ></script>
+    <title> File Upload </title>
+  </head>
+  <body>
+    <nav>
+      <a class="nav_link" href="/home.html">Home</a>
+          <ul class="nav_list">
+              <li class="nav_list_item">
+                  <a class="nav_link" href="/upload.html"> Upload file </a>
+              </li>
+              <li class="nav_list_item">
+                  <a class="nav_link" href="/updateElements.html">Add/Remove elements</a>
+              </li>
+          </ul>
+    </nav>
+
+    <div id="outer_form_display" class="display_div">
+      <form action="/display_molecule" method="post" class="forms">
+        <legend>Select one molecule to display:</legend><br>
+          <div id="rotate_div" class="display_div">
+
+            <label for="Xrot">X Rotation</label>
+            <input type="number" id = "Xrot" name="Xrot" value="0" required> <br>
+            <label for="Yrot">Y Rotation</label>
+            <input type="number" id = "Yrot" name="Yrot" value="0" required> <br>
+            <label for="Zrot">Z Rotation</label>
+            <input type="number" id = "Zrot" name="Zrot" value="0" required> <br>
+            <label for="Zrot">Name</label>
+            <input type="text" id = "molName" name="molName"> <br>
+
+          </div>
+          <div id="submit_div" class="display_div">
+            <input type="submit" id="displayButtonForm" class="form_button big_text" value="Rotate Molecule"/>
+          </div>
+      </form>
+    </div>
+    
+    <div id="svg_div" class="display_div">
+      <!-- beforeend -->
+
+    </div>
+
+    <footer>
+      <div>
+          <span class="span_footer">Created March 2023. Molecule Display website.
+              <a href="https://github.com/Justin-Ja/" class="footerLink">
+              More Info</a>
+          </span>
+      </div>
+    </footer>
+  </body>
+</html>
