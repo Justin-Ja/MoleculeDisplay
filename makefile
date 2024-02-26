@@ -8,10 +8,10 @@ clean:
 
 #IGNORE WARNING OF UNUSED ARGUMENT -dynamiclib
 _molecule.so: molecule_wrap.o
-	$(CC) molecule_wrap.o  -L. -L/usr/lib/python3.7/config-3.7m-x86_64-linux-gnu -l:libmol.so -lpython3.7m -shared  -dynamiclib -o _molecule.so
+	$(CC) molecule_wrap.o -L. -L/usr/lib/python3.8/config-3.8-x86_64-linux-gnu -lpython3.8 -shared -l:libmol.so -dynamiclib -o _molecule.so
 
 molecule_wrap.o: molecule_wrap.c
-	$(CC) $(CFLAGS) -I/usr/include/python3.7m -c molecule_wrap.c -fPIC -o molecule_wrap.o
+	$(CC) $(CFLAGS) -I/usr/include/python3.8 -c molecule_wrap.c -fPIC -o molecule_wrap.o
 
 molecule_wrap.c molecule.py: molecule.i
 	swig -python molecule.i
@@ -21,9 +21,3 @@ libmol.so: mol.o
 
 mol.o: mol.c mol.h
 	$(CC) $(CFLAGS) -c mol.c -fPIC -o mol.o
-
-# main.o:  main.c mol.h
-# 	$(CC) $(FLAGS) -c main.c -o main.o
-#
-# testprog: main.o libmol.so
-# 	$(CC) main.o -L. -l:libmol.so -o testprog
