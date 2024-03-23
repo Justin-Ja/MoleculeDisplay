@@ -76,25 +76,36 @@ class MyHandler( BaseHTTPRequestHandler ):
 
     def do_POST(self):
 
-        if self.path == "/upload_hanlder.html":
+        if self.path == "/upload_handler.html":
             content_length = int(self.headers['Content-Length']);
             body = self.rfile.read(content_length);
-
             # convert POST content into a dictionary
             postvars = urllib.parse.parse_qs( body.decode( 'utf-8' ) );
 
-            #Separate name and get file prepped for data entry
-            str = postvars.get(" name");
-            temp = str[1].split("\n");
-            name = temp[2];
-            name = name[0:len(name)-1];
+            print(dir(postvars));
+            testVar = postvars.values();
 
-            temp2 = postvars.get(" filename");
-            temp2 = temp2[0].split("\n");
-            filename = temp2[0];
-            filename = filename[1:(len(filename)-2)];
-            print(name);
-            print(filename);
+            print(dir(testVar))
+
+            molName = postvars.get("name")
+
+            if molName is not None:
+                temp = molName[1].split("\n")
+                name = temp[2]
+                name = name[0:len(name)-1]
+            else:
+                name = "temp file #" + str(content_length)
+
+
+            temp2 = postvars.get("filename")
+            if temp2 is not None:
+                temp2 = temp2[0].split("\n")
+                filename = temp2[0]
+                filename = filename[1:(len(filename)-2)]
+                print(name);
+                print(filename);
+            else:
+                filename = "caffeine-3D-structure-CT1001987571.sdf"
 
             #Parse file and pass name/file into database
             #HTML makes sure there is at least a file and name inputted
