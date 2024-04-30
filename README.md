@@ -38,7 +38,7 @@ Finally the user can display the molecule and then rotate it in three dimensions
 Example image of a caffiene moecule that the app would display:
 ![Caffeine](https://github.com/Justin-Ja/MoleculeDisplay/assets/95664856/0a599951-6ceb-4813-b019-d68e53eb1b8b)
 
-##Issues and Problems
+## Issues and Problems
 
 Not sure how or what happened, but some features have become debunked. Might have happened when changing python version, but app isn't fully working as intended :(
 Filename and name of the uploaded molecule don't work and are hardcoded for the caffeine file right now. 
